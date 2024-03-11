@@ -16,5 +16,25 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        private void txtShow_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtShow_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGo_Click(object sender, EventArgs e)
+        {
+            txtShow.Text = "Hello World!";
+        }
     }
 }
