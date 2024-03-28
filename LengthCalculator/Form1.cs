@@ -76,7 +76,7 @@ namespace LengthCalculator
             strInput = txtM.Text;
             if (double.TryParse(strInput, out douOutput) == true) 
             {
-                caculateAnswer(0, douOutput*100);
+                caculateAnswer(1, douOutput*100);
             }
             else
             {
@@ -92,7 +92,7 @@ namespace LengthCalculator
             strInput = txtKM.Text;
             if(double.TryParse(strInput,out douOutput)==true)
             {
-                caculateAnswer(0, douOutput*1000);
+                caculateAnswer(2, douOutput*1000);
             }
             else
             {
@@ -108,7 +108,7 @@ namespace LengthCalculator
             strInput = txtIn.Text;
             if(double.TryParse(strInput,out douOutput)==true)
             {
-                caculateAnswer(0, douOutput*2.54);
+                caculateAnswer(3, douOutput*2.54);
             }
             else
             {
@@ -124,7 +124,7 @@ namespace LengthCalculator
            strInput = txtFt.Text;
             if(double.TryParse(strInput, out douOutput)==true)
             {
-                caculateAnswer(0, douOutput*30.48);
+                caculateAnswer(4, douOutput*30.48);
             }
             else
             {
@@ -139,7 +139,7 @@ namespace LengthCalculator
             strInput = txtYard.Text;
             if(double.TryParse(strInput,out douOutput)==true)
             {
-                caculateAnswer(0, douOutput*91.44);
+                caculateAnswer(5, douOutput*91.44);
             }
             else
             {
