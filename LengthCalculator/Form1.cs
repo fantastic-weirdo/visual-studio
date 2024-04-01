@@ -92,7 +92,7 @@ namespace LengthCalculator
             strInput = txtKM.Text;
             if(double.TryParse(strInput,out douOutput)==true)
             {
-                caculateAnswer(2, douOutput*1000);
+                caculateAnswer(2, douOutput*100000);
             }
             else
             {
