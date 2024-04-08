@@ -26,7 +26,10 @@ namespace Calculator
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtNumber.Text = "";
+            txtNumber.Text = "0";
+            firstNumber = 0f;
+            secondNumber = 0f;
+            operators = -1;
         }
 
         private void btnSeven_Click(object sender, EventArgs e)
@@ -101,7 +104,9 @@ namespace Calculator
 
         private void btnDot_Click(object sender, EventArgs e)
         {
-
+            // 確認輸入文字框中完全沒有小數點
+            if (txtNumber.Text.IndexOf(".") == -1)
+                txtNumber.Text = txtNumber.Text + ".";
         }
 
         private void btnEqual_Click(object sender, EventArgs e)
