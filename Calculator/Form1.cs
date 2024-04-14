@@ -146,6 +146,19 @@ namespace Calculator
             Select_Operator(1);
         }
 
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_percent_Click(object sender, EventArgs e)
+        {
+            float answer;
+            answer = Convert.ToSingle(txtNumber.Text);
+            answer = answer / 100;
+            txtNumber.Text=string.Format("{0:0.##########}", answer);
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Select_Operator(0);
