@@ -148,7 +148,11 @@ namespace Calculator
 
         private void btn_back_Click(object sender, EventArgs e)
         {
-
+            string number = txtNumber.Text; 
+            int length=number.Length;
+            txtNumber.Text=number.Substring(0, length-1);
+            if (txtNumber.Text == "")
+                txtNumber.Text = "0";
         }
 
         private void btn_percent_Click(object sender, EventArgs e)
