@@ -159,8 +159,8 @@ namespace Calculator
         {
             float answer;
             answer = Convert.ToSingle(txtNumber.Text);
-            answer = answer / 100;
-            txtNumber.Text=string.Format("{0:0.##########}", answer);
+            txtNumber.Text=string.Format("{0:P2}", answer);
+            
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
