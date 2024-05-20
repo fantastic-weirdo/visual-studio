@@ -1,6 +1,6 @@
 ﻿namespace NotePad
 {
-    partial class Form
+    partial class Form1
     {
         /// <summary>
         /// 設計工具所需的變數。
@@ -30,17 +30,19 @@
         {
             this.btnOpen = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnUndo = new System.Windows.Forms.Button();
+            this.btnRedo = new System.Windows.Forms.Button();
             this.rtbText = new System.Windows.Forms.RichTextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.listUndo = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // btnOpen
             // 
-            this.btnOpen.Font = new System.Drawing.Font("新細明體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnOpen.Location = new System.Drawing.Point(21, 22);
+            this.btnOpen.Location = new System.Drawing.Point(27, 25);
             this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(98, 43);
+            this.btnOpen.Size = new System.Drawing.Size(109, 37);
             this.btnOpen.TabIndex = 0;
             this.btnOpen.Text = "開啟檔案";
             this.btnOpen.UseVisualStyleBackColor = true;
@@ -48,36 +50,67 @@
             // 
             // btnSave
             // 
-            this.btnSave.Font = new System.Drawing.Font("新細明體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnSave.Location = new System.Drawing.Point(135, 22);
+            this.btnSave.Location = new System.Drawing.Point(162, 25);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(98, 43);
+            this.btnSave.Size = new System.Drawing.Size(109, 37);
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "存檔";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // btnUndo
+            // 
+            this.btnUndo.Location = new System.Drawing.Point(301, 25);
+            this.btnUndo.Name = "btnUndo";
+            this.btnUndo.Size = new System.Drawing.Size(109, 37);
+            this.btnUndo.TabIndex = 2;
+            this.btnUndo.Text = "復原上一步";
+            this.btnUndo.UseVisualStyleBackColor = true;
+            this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
+            // 
+            // btnRedo
+            // 
+            this.btnRedo.Location = new System.Drawing.Point(441, 25);
+            this.btnRedo.Name = "btnRedo";
+            this.btnRedo.Size = new System.Drawing.Size(109, 37);
+            this.btnRedo.TabIndex = 3;
+            this.btnRedo.Text = "重作下一步";
+            this.btnRedo.UseVisualStyleBackColor = true;
+            this.btnRedo.Click += new System.EventHandler(this.btnRedo_Click);
+            // 
             // rtbText
             // 
-            this.rtbText.Location = new System.Drawing.Point(21, 71);
+            this.rtbText.Location = new System.Drawing.Point(27, 81);
             this.rtbText.Name = "rtbText";
-            this.rtbText.Size = new System.Drawing.Size(713, 350);
-            this.rtbText.TabIndex = 2;
+            this.rtbText.Size = new System.Drawing.Size(588, 326);
+            this.rtbText.TabIndex = 4;
             this.rtbText.Text = "";
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // Form
+            // listUndo
+            // 
+            this.listUndo.FormattingEnabled = true;
+            this.listUndo.ItemHeight = 15;
+            this.listUndo.Location = new System.Drawing.Point(638, 84);
+            this.listUndo.Name = "listUndo";
+            this.listUndo.Size = new System.Drawing.Size(132, 319);
+            this.listUndo.TabIndex = 5;
+            // 
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listUndo);
             this.Controls.Add(this.rtbText);
+            this.Controls.Add(this.btnRedo);
+            this.Controls.Add(this.btnUndo);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnOpen);
-            this.Name = "Form";
+            this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
 
@@ -87,9 +120,12 @@
 
         private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnUndo;
+        private System.Windows.Forms.Button btnRedo;
         private System.Windows.Forms.RichTextBox rtbText;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ListBox listUndo;
     }
 }
 
