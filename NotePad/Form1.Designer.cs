@@ -88,6 +88,7 @@
             this.rtbText.Size = new System.Drawing.Size(588, 379);
             this.rtbText.TabIndex = 4;
             this.rtbText.Text = "";
+            this.rtbText.TextChanged += new System.EventHandler(this.rtbText_TextChanged);
             // 
             // openFileDialog1
             // 
@@ -109,6 +110,7 @@
             this.comboBoxFont.Name = "comboBoxFont";
             this.comboBoxFont.Size = new System.Drawing.Size(155, 23);
             this.comboBoxFont.TabIndex = 6;
+            this.comboBoxFont.SelectedIndexChanged += new System.EventHandler(this.comboBox_SelectedIndexChanged);
             // 
             // comboBoxSize
             // 
@@ -117,6 +119,7 @@
             this.comboBoxSize.Name = "comboBoxSize";
             this.comboBoxSize.Size = new System.Drawing.Size(94, 23);
             this.comboBoxSize.TabIndex = 7;
+            this.comboBoxSize.SelectedIndexChanged += new System.EventHandler(this.comboBox_SelectedIndexChanged);
             // 
             // comboBoxStyle
             // 
@@ -125,6 +128,7 @@
             this.comboBoxStyle.Name = "comboBoxStyle";
             this.comboBoxStyle.Size = new System.Drawing.Size(94, 23);
             this.comboBoxStyle.TabIndex = 8;
+            this.comboBoxStyle.SelectedIndexChanged += new System.EventHandler(this.comboBox_SelectedIndexChanged);
             // 
             // Form1
             // 
