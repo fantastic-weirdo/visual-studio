@@ -35,6 +35,10 @@
             this.txtTime = new System.Windows.Forms.TextBox();
             this.txtDate = new System.Windows.Forms.TextBox();
             this.txtWeekDay = new System.Windows.Forms.TextBox();
+            this.btnSetAlert = new System.Windows.Forms.Button();
+            this.cmbHour = new System.Windows.Forms.ComboBox();
+            this.cmbMin = new System.Windows.Forms.ComboBox();
+            this.btnCancelAlert = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +58,10 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabPage1.Controls.Add(this.btnCancelAlert);
+            this.tabPage1.Controls.Add(this.cmbMin);
+            this.tabPage1.Controls.Add(this.cmbHour);
+            this.tabPage1.Controls.Add(this.btnSetAlert);
             this.tabPage1.Controls.Add(this.txtWeekDay);
             this.tabPage1.Controls.Add(this.txtDate);
             this.tabPage1.Controls.Add(this.txtTime);
@@ -125,6 +133,47 @@
             this.txtWeekDay.Text = "星期五";
             this.txtWeekDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // btnSetAlert
+            // 
+            this.btnSetAlert.BackColor = System.Drawing.Color.White;
+            this.btnSetAlert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSetAlert.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnSetAlert.Location = new System.Drawing.Point(354, 231);
+            this.btnSetAlert.Name = "btnSetAlert";
+            this.btnSetAlert.Size = new System.Drawing.Size(139, 37);
+            this.btnSetAlert.TabIndex = 3;
+            this.btnSetAlert.Text = "設定鬧鐘";
+            this.btnSetAlert.UseVisualStyleBackColor = false;
+            // 
+            // cmbHour
+            // 
+            this.cmbHour.FormattingEnabled = true;
+            this.cmbHour.Location = new System.Drawing.Point(16, 231);
+            this.cmbHour.Name = "cmbHour";
+            this.cmbHour.Size = new System.Drawing.Size(153, 37);
+            this.cmbHour.TabIndex = 5;
+            this.cmbHour.Text = "00";
+            // 
+            // cmbMin
+            // 
+            this.cmbMin.FormattingEnabled = true;
+            this.cmbMin.Location = new System.Drawing.Point(185, 231);
+            this.cmbMin.Name = "cmbMin";
+            this.cmbMin.Size = new System.Drawing.Size(153, 37);
+            this.cmbMin.TabIndex = 6;
+            this.cmbMin.Text = "00";
+            // 
+            // btnCancelAlert
+            // 
+            this.btnCancelAlert.BackColor = System.Drawing.Color.White;
+            this.btnCancelAlert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelAlert.Location = new System.Drawing.Point(508, 230);
+            this.btnCancelAlert.Name = "btnCancelAlert";
+            this.btnCancelAlert.Size = new System.Drawing.Size(139, 37);
+            this.btnCancelAlert.TabIndex = 7;
+            this.btnCancelAlert.Text = "關閉鬧鐘";
+            this.btnCancelAlert.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -149,6 +198,10 @@
         private System.Windows.Forms.TextBox txtWeekDay;
         private System.Windows.Forms.TextBox txtDate;
         private System.Windows.Forms.TextBox txtTime;
+        private System.Windows.Forms.Button btnSetAlert;
+        private System.Windows.Forms.Button btnCancelAlert;
+        private System.Windows.Forms.ComboBox cmbMin;
+        private System.Windows.Forms.ComboBox cmbHour;
     }
 }
 
