@@ -130,7 +130,6 @@
             this.txtWeekDay.Name = "txtWeekDay";
             this.txtWeekDay.Size = new System.Drawing.Size(254, 67);
             this.txtWeekDay.TabIndex = 2;
-            this.txtWeekDay.Text = "星期五";
             this.txtWeekDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtDate
@@ -144,7 +143,6 @@
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(363, 67);
             this.txtDate.TabIndex = 1;
-            this.txtDate.Text = "2024-05-27";
             this.txtDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtTime
@@ -158,7 +156,6 @@
             this.txtTime.Name = "txtTime";
             this.txtTime.Size = new System.Drawing.Size(631, 111);
             this.txtTime.TabIndex = 0;
-            this.txtTime.Text = "10:39:35";
             this.txtTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tabPage2
