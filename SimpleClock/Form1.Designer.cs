@@ -130,6 +130,7 @@
             this.txtWeekDay.Name = "txtWeekDay";
             this.txtWeekDay.Size = new System.Drawing.Size(254, 67);
             this.txtWeekDay.TabIndex = 2;
+            this.txtWeekDay.Text = "星期一";
             this.txtWeekDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtDate
@@ -143,6 +144,7 @@
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(363, 67);
             this.txtDate.TabIndex = 1;
+            this.txtDate.Text = "2022-05-20";
             this.txtDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtTime
@@ -156,6 +158,7 @@
             this.txtTime.Name = "txtTime";
             this.txtTime.Size = new System.Drawing.Size(631, 111);
             this.txtTime.TabIndex = 0;
+            this.txtTime.Text = "13:33:40";
             this.txtTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tabPage2
@@ -178,6 +181,15 @@
             this.tabPage3.Size = new System.Drawing.Size(665, 339);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "倒數";
+            // 
+            // timerAlert
+            // 
+            this.timerAlert.Enabled = true;
+            // 
+            // timerClcok
+            // 
+            this.timerClcok.Enabled = true;
+            this.timerClcok.Tick += new System.EventHandler(this.timerClcok_Tick);
             // 
             // Form1
             // 
