@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using NAudio.Wave;           // 音效檔播放器函式庫
 using System.IO;             // 檔案讀取的IO函式庫
 
+
+
 namespace SimpleClock
 {
     public partial class Form1 : Form
@@ -93,6 +95,22 @@ namespace SimpleClock
                 waveOut.Dispose();
                 waveOut = null;
             }
+        }
+
+        private void btnSetAlert_Click(object sender, EventArgs e)
+        {
+            timerAlert.Start(); // 啟動鬧鐘計時器
+            btnSetAlert.Enabled = false;
+            btnCancelAlert.Enabled = true;
+            strSelectTime = cmbHour.SelectedItem.ToString() + ":" + cmbMin.SelectedItem.ToString(); // 擷取小時和分鐘的下拉選單文字，用來設定鬧鐘時間
+        }
+
+        private void btnCancelAlert_Click(object sender, EventArgs e)
+        {
+            stopWaveOut();     // 停止之前的播放
+            timerAlert.Stop(); // 停止鬧鐘計時器
+            btnSetAlert.Enabled = true;
+            btnCancelAlert.Enabled = false;
         }
     }
 }
