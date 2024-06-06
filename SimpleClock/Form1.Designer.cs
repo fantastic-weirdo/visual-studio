@@ -187,6 +187,7 @@
             // timerAlert
             // 
             this.timerAlert.Enabled = true;
+            this.timerAlert.Tick += new System.EventHandler(this.timerAlert_Tick);
             // 
             // timerClcok
             // 
