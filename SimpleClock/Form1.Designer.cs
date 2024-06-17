@@ -40,12 +40,20 @@
             this.txtDate = new System.Windows.Forms.TextBox();
             this.txtTime = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.listStopWatchLog = new System.Windows.Forms.ListBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtStopWatch = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.timerAlert = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timerClcok = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -166,6 +174,13 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabPage2.Controls.Add(this.listStopWatchLog);
+            this.tabPage2.Controls.Add(this.button5);
+            this.tabPage2.Controls.Add(this.button4);
+            this.tabPage2.Controls.Add(this.button3);
+            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.txtStopWatch);
             this.tabPage2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tabPage2.Location = new System.Drawing.Point(4, 38);
             this.tabPage2.Name = "tabPage2";
@@ -173,6 +188,77 @@
             this.tabPage2.Size = new System.Drawing.Size(665, 339);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "碼表";
+            // 
+            // listStopWatchLog
+            // 
+            this.listStopWatchLog.FormattingEnabled = true;
+            this.listStopWatchLog.ItemHeight = 29;
+            this.listStopWatchLog.Location = new System.Drawing.Point(37, 126);
+            this.listStopWatchLog.Name = "listStopWatchLog";
+            this.listStopWatchLog.Size = new System.Drawing.Size(186, 207);
+            this.listStopWatchLog.TabIndex = 6;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.LightCoral;
+            this.button5.Location = new System.Drawing.Point(241, 232);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(278, 40);
+            this.button5.TabIndex = 5;
+            this.button5.Text = "停止並歸零";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(380, 180);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(139, 46);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "紀錄";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(241, 180);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(133, 46);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "歸零";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Orange;
+            this.button2.Location = new System.Drawing.Point(380, 128);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(139, 46);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "暫停";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(241, 128);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(133, 46);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "開始";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // txtStopWatch
+            // 
+            this.txtStopWatch.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtStopWatch.Font = new System.Drawing.Font("微軟正黑體", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtStopWatch.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtStopWatch.Location = new System.Drawing.Point(37, 6);
+            this.txtStopWatch.Name = "txtStopWatch";
+            this.txtStopWatch.Size = new System.Drawing.Size(588, 114);
+            this.txtStopWatch.TabIndex = 0;
+            this.txtStopWatch.Text = "00:00:00";
+            this.txtStopWatch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tabPage3
             // 
@@ -206,6 +292,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -226,6 +314,13 @@
         private System.Windows.Forms.Timer timerAlert;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timerClcok;
+        private System.Windows.Forms.ListBox listStopWatchLog;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtStopWatch;
     }
 }
 
