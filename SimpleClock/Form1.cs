@@ -33,13 +33,24 @@ namespace SimpleClock
         {
             // 設定小時下拉選單的選單內容，建立小時的清單，數字範圍為00-23
             for (int i = 0; i <= 23; i++)
+            {
                 cmbHour.Items.Add(string.Format("{0:00}", i));
-            cmbHour.SelectedIndex = 0;
+                cmbCountHour.Items.Add(string.Format("{0:00}", i));
+            }
 
             // 設定分鐘下拉選單的選單內容，建立分鐘的清單，數字範圍為00-59
             for (int i = 0; i <= 59; i++)
+            {
                 cmbMin.Items.Add(string.Format("{0:00}", i));
+                cmbCountMin.Items.Add(string.Format("{0:00}", i));
+                cmbCountSecond.Items.Add(string.Format("{0:00}", i));
+            }
+
+            cmbHour.SelectedIndex = 0;
             cmbMin.SelectedIndex = 0;
+            cmbCountHour.SelectedIndex = 0;
+            cmbCountMin.SelectedIndex = 0;
+            cmbCountSecond.SelectedIndex = 0;
         }
 
         // 時鐘timer1_Tick事件：每0.1秒執行一次
@@ -174,6 +185,45 @@ namespace SimpleClock
             {
                 listStopWatchLog.Items.Add(String.Format("第 {0} 筆紀錄：{1}", i.ToString(), StopWatchLog[i - 1] + "\n"));
                 i--;
+            }
+        }
+        bool isCountDownReset = true;                           // 用來紀錄是不是重新設定
+        TimeSpan ts;                                            // 宣告一個時間間隔變數
+
+        // 下拉選單初始化
+       
+        private void timerCountDown_Tick(object sender, EventArgs e)
+        {
+            txtCountDown.Text = ts.ToString("hh':'mm':'ss");    // 顯示時間
+            ts = ts.Subtract(TimeSpan.FromSeconds(1));          // 每一秒鐘將顯示時間減掉一秒
+
+            if (txtCountDown.Text == "00:00:00")
+            {
+                try
+                {
+                    stopWaveOut();
+
+                    // 指定聲音檔的相對路徑，可以使用MP3
+                    string audioFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "alert.wav");
+
+                    // 使用 AudioFileReader 來讀取聲音檔
+                    audioFileReader = new AudioFileReader(audioFilePath);
+
+                    // 初始化 WaveOutEvent
+                    waveOut = new WaveOutEvent();
+                    waveOut.Init(audioFileReader);
+
+                    // 播放聲音檔
+                    waveOut.Play();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("無法播放聲音檔，錯誤資訊: " + ex.Message);
+                }
+                finally
+                {
+                    timerCountDown.Stop();         // 停止鬧鐘計時器
+                }
             }
         }
     }
