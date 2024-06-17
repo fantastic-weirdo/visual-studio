@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NAudio.Wave;           // 音效檔播放器函式庫
 using System.IO;             // 檔案讀取的IO函式庫
+using System.Diagnostics; // 引用「系統診斷」的函式庫
 
 
 
@@ -111,6 +112,20 @@ namespace SimpleClock
             timerAlert.Stop(); // 停止鬧鐘計時器
             btnSetAlert.Enabled = true;
             btnCancelAlert.Enabled = false;
+        }
+        List<string> StopWatchLog = new List<string>();         // 碼表紀錄清單 
+        Stopwatch sw = new Stopwatch();                         // 宣告一個碼表物件
+
+        // timerStopWatch_tick：每毫秒執行一次，所以更新的速度會比較快
+        private void timerStopWatch_Tick(object sender, EventArgs e)
+        {
+            txtStopWatch.Text = sw.Elapsed.ToString("hh':'mm':'ss':'fff");    // 顯示碼表時間
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            sw.Start();             // 啟動碼表
+            timerStopWatch.Start(); // 開始讓碼表文字顯示
         }
     }
 }

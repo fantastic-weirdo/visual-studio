@@ -41,16 +41,17 @@
             this.txtTime = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.listStopWatchLog = new System.Windows.Forms.ListBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnStop = new System.Windows.Forms.Button();
+            this.btnLog = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnPause = new System.Windows.Forms.Button();
+            this.btnStart = new System.Windows.Forms.Button();
             this.txtStopWatch = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.timerAlert = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timerClcok = new System.Windows.Forms.Timer(this.components);
+            this.timerStopWatch = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -175,11 +176,11 @@
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Gainsboro;
             this.tabPage2.Controls.Add(this.listStopWatchLog);
-            this.tabPage2.Controls.Add(this.button5);
-            this.tabPage2.Controls.Add(this.button4);
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.btnStop);
+            this.tabPage2.Controls.Add(this.btnLog);
+            this.tabPage2.Controls.Add(this.btnReset);
+            this.tabPage2.Controls.Add(this.btnPause);
+            this.tabPage2.Controls.Add(this.btnStart);
             this.tabPage2.Controls.Add(this.txtStopWatch);
             this.tabPage2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tabPage2.Location = new System.Drawing.Point(4, 38);
@@ -198,55 +199,56 @@
             this.listStopWatchLog.Size = new System.Drawing.Size(186, 207);
             this.listStopWatchLog.TabIndex = 6;
             // 
-            // button5
+            // btnStop
             // 
-            this.button5.BackColor = System.Drawing.Color.LightCoral;
-            this.button5.Location = new System.Drawing.Point(241, 232);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(278, 40);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "停止並歸零";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnStop.BackColor = System.Drawing.Color.LightCoral;
+            this.btnStop.Location = new System.Drawing.Point(241, 232);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(278, 40);
+            this.btnStop.TabIndex = 5;
+            this.btnStop.Text = "停止並歸零";
+            this.btnStop.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnLog
             // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(380, 180);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(139, 46);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "紀錄";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnLog.BackColor = System.Drawing.Color.White;
+            this.btnLog.Location = new System.Drawing.Point(380, 180);
+            this.btnLog.Name = "btnLog";
+            this.btnLog.Size = new System.Drawing.Size(139, 46);
+            this.btnLog.TabIndex = 4;
+            this.btnLog.Text = "紀錄";
+            this.btnLog.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnReset
             // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(241, 180);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(133, 46);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "歸零";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnReset.BackColor = System.Drawing.Color.White;
+            this.btnReset.Location = new System.Drawing.Point(241, 180);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(133, 46);
+            this.btnReset.TabIndex = 3;
+            this.btnReset.Text = "歸零";
+            this.btnReset.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnPause
             // 
-            this.button2.BackColor = System.Drawing.Color.Orange;
-            this.button2.Location = new System.Drawing.Point(380, 128);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(139, 46);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "暫停";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnPause.BackColor = System.Drawing.Color.Orange;
+            this.btnPause.Location = new System.Drawing.Point(380, 128);
+            this.btnPause.Name = "btnPause";
+            this.btnPause.Size = new System.Drawing.Size(139, 46);
+            this.btnPause.TabIndex = 2;
+            this.btnPause.Text = "暫停";
+            this.btnPause.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnStart
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(241, 128);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 46);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "開始";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnStart.BackColor = System.Drawing.Color.White;
+            this.btnStart.Location = new System.Drawing.Point(241, 128);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(133, 46);
+            this.btnStart.TabIndex = 1;
+            this.btnStart.Text = "開始";
+            this.btnStart.UseVisualStyleBackColor = false;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // txtStopWatch
             // 
@@ -257,7 +259,7 @@
             this.txtStopWatch.Name = "txtStopWatch";
             this.txtStopWatch.Size = new System.Drawing.Size(588, 114);
             this.txtStopWatch.TabIndex = 0;
-            this.txtStopWatch.Text = "00:00:00";
+            this.txtStopWatch.Text = "00:00:00:000";
             this.txtStopWatch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tabPage3
@@ -279,6 +281,10 @@
             // 
             this.timerClcok.Enabled = true;
             this.timerClcok.Tick += new System.EventHandler(this.timerClcok_Tick);
+            // 
+            // timerStopWatch
+            // 
+            this.timerStopWatch.Tick += new System.EventHandler(this.timerStopWatch_Tick);
             // 
             // Form1
             // 
@@ -315,12 +321,13 @@
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timerClcok;
         private System.Windows.Forms.ListBox listStopWatchLog;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnStop;
+        private System.Windows.Forms.Button btnLog;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnPause;
+        private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.TextBox txtStopWatch;
+        private System.Windows.Forms.Timer timerStopWatch;
     }
 }
 
