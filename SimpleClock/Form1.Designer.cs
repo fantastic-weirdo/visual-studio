@@ -359,6 +359,7 @@
             this.btnCountStart.TabIndex = 9;
             this.btnCountStart.Text = "開始倒數";
             this.btnCountStart.UseVisualStyleBackColor = false;
+            this.btnCountStart.Click += new System.EventHandler(this.btnCountStart_Click);
             // 
             // btnCountStop
             // 
@@ -371,6 +372,7 @@
             this.btnCountStop.TabIndex = 10;
             this.btnCountStop.Text = "停止";
             this.btnCountStop.UseVisualStyleBackColor = false;
+            this.btnCountStop.Click += new System.EventHandler(this.btnCountStop_Click);
             // 
             // btnCountPause
             // 
@@ -383,6 +385,7 @@
             this.btnCountPause.TabIndex = 11;
             this.btnCountPause.Text = "暫停";
             this.btnCountPause.UseVisualStyleBackColor = false;
+            this.btnCountPause.Click += new System.EventHandler(this.btnCountPause_Click);
             // 
             // timerCountDown
             // 
