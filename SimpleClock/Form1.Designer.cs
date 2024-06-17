@@ -208,6 +208,7 @@
             this.btnStop.TabIndex = 5;
             this.btnStop.Text = "停止並歸零";
             this.btnStop.UseVisualStyleBackColor = false;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // btnLog
             // 
@@ -218,6 +219,7 @@
             this.btnLog.TabIndex = 4;
             this.btnLog.Text = "紀錄";
             this.btnLog.UseVisualStyleBackColor = false;
+            this.btnLog.Click += new System.EventHandler(this.btnLog_Click);
             // 
             // btnReset
             // 
@@ -228,6 +230,7 @@
             this.btnReset.TabIndex = 3;
             this.btnReset.Text = "歸零";
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnPause
             // 
@@ -238,6 +241,7 @@
             this.btnPause.TabIndex = 2;
             this.btnPause.Text = "暫停";
             this.btnPause.UseVisualStyleBackColor = false;
+            this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
             // 
             // btnStart
             // 
