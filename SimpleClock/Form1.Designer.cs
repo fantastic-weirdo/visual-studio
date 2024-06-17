@@ -192,17 +192,18 @@
             // 
             // listStopWatchLog
             // 
+            this.listStopWatchLog.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.listStopWatchLog.FormattingEnabled = true;
-            this.listStopWatchLog.ItemHeight = 29;
+            this.listStopWatchLog.ItemHeight = 19;
             this.listStopWatchLog.Location = new System.Drawing.Point(37, 126);
             this.listStopWatchLog.Name = "listStopWatchLog";
-            this.listStopWatchLog.Size = new System.Drawing.Size(186, 207);
+            this.listStopWatchLog.Size = new System.Drawing.Size(232, 194);
             this.listStopWatchLog.TabIndex = 6;
             // 
             // btnStop
             // 
             this.btnStop.BackColor = System.Drawing.Color.LightCoral;
-            this.btnStop.Location = new System.Drawing.Point(241, 232);
+            this.btnStop.Location = new System.Drawing.Point(275, 230);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(278, 40);
             this.btnStop.TabIndex = 5;
@@ -213,7 +214,7 @@
             // btnLog
             // 
             this.btnLog.BackColor = System.Drawing.Color.White;
-            this.btnLog.Location = new System.Drawing.Point(380, 180);
+            this.btnLog.Location = new System.Drawing.Point(414, 178);
             this.btnLog.Name = "btnLog";
             this.btnLog.Size = new System.Drawing.Size(139, 46);
             this.btnLog.TabIndex = 4;
@@ -224,7 +225,7 @@
             // btnReset
             // 
             this.btnReset.BackColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(241, 180);
+            this.btnReset.Location = new System.Drawing.Point(275, 178);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(133, 46);
             this.btnReset.TabIndex = 3;
@@ -235,7 +236,7 @@
             // btnPause
             // 
             this.btnPause.BackColor = System.Drawing.Color.Orange;
-            this.btnPause.Location = new System.Drawing.Point(380, 128);
+            this.btnPause.Location = new System.Drawing.Point(414, 126);
             this.btnPause.Name = "btnPause";
             this.btnPause.Size = new System.Drawing.Size(139, 46);
             this.btnPause.TabIndex = 2;
@@ -246,7 +247,7 @@
             // btnStart
             // 
             this.btnStart.BackColor = System.Drawing.Color.White;
-            this.btnStart.Location = new System.Drawing.Point(241, 128);
+            this.btnStart.Location = new System.Drawing.Point(275, 126);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(133, 46);
             this.btnStart.TabIndex = 1;
