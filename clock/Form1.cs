@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using NAudio.Wave;
 using System.IO;
+using System.Linq;
 
 namespace clock
 {
@@ -58,6 +59,7 @@ namespace clock
         private List<bool> alarmsRung = new List<bool> { false, false, false, false, false }; // 記錄鬧鐘是否響過
         private WaveOutEvent waveOut;
         private AudioFileReader audioFileReader;
+        private bool isAlarmPlaying = false;  // 判斷是否有鬧鐘在響
 
         private void timerAlert_Tick(object sender, EventArgs e)
         {
@@ -65,11 +67,11 @@ namespace clock
 
             for (int i = 0; i < strSelectTimes.Count; i++)
             {
-                if (strSelectTimes[i] == currentTime && !alarmsRung[i])
+                if (strSelectTimes[i] == currentTime && !alarmsRung[i] && !isAlarmPlaying)
                 {
                     try
                     {
-                        stopWaveOut();
+                        stopWaveOut(); // 确保之前的声音停止
 
                         string audioFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "alert.wav");
                         audioFileReader = new AudioFileReader(audioFilePath);
@@ -78,12 +80,21 @@ namespace clock
                         waveOut.Play();
 
                         alarmsRung[i] = true; // 設置該鬧鐘為已響過
+                        isAlarmPlaying = true; // 設置鬧鐘正在響起
+                        btnOff.Enabled = true; // 确保关闭按钮可用
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("無法播放聲音檔，錯誤資訊: " + ex.Message);
                     }
                 }
+            }
+
+            // 檢查是否所有鬧鐘都已經響過
+            if (alarmsRung.All(alarm => alarm))
+            {
+                btnOn.Enabled = true; // 启用启动按钮
+                timerAlert.Stop(); // 停止鬧鐘計時器
             }
         }
 
@@ -95,13 +106,26 @@ namespace clock
                 waveOut.Dispose();
                 waveOut = null;
             }
+            if (audioFileReader != null)
+            {
+                audioFileReader.Dispose();
+                audioFileReader = null;
+            }
+            isAlarmPlaying = false; // 重置鬧鐘正在響起標志
+            btnOff.Enabled = false; // 禁用关闭按钮直到下一个闹钟響起
+
+            // 檢查是否所有鬧鐘都已經響過
+            if (alarmsRung.All(alarm => alarm))
+            {
+                btnOn.Enabled = true; // 启用启动按钮
+            }
         }
 
         private void btnOn_Click(object sender, EventArgs e)
         {
             timerAlert.Start();
-            btnOn.Enabled = false;
-            btnOff.Enabled = true;
+            btnOn.Enabled = false; // 禁用启动按钮，直到所有闹钟響过
+            btnOff.Enabled = false; // 禁用关闭按钮，直到闹钟響起
 
             strSelectTimes.Clear();
             alarmsRung = new List<bool> { false, false, false, false, false };
@@ -116,10 +140,48 @@ namespace clock
         private void btnOff_Click(object sender, EventArgs e)
         {
             stopWaveOut();
-            timerAlert.Stop();
-            btnOn.Enabled = true;
-            btnOff.Enabled = false;
+            // 檢查是否所有鬧鐘都已經響過
+            if (alarmsRung.All(alarm => alarm))
+            {
+                btnOn.Enabled = true; // 启用启动按钮
+            }
+        }
+
+       
+
+        private void btnClear_Click_1(object sender, EventArgs e)
+        {
+           
+                stopWaveOut();
+                timerAlert.Stop();
+
+                strSelectTimes.Clear();
+                alarmsRung = new List<bool> { false, false, false, false, false };
+                isAlarmPlaying = false;
+
+                btnOn.Enabled = true;
+                btnOff.Enabled = false;
+
+                cmbHour.SelectedIndex = 0;
+                cmbHour1.SelectedIndex = 0;
+                cmbHour2.SelectedIndex = 0;
+                cmbHour3.SelectedIndex = 0;
+                cmbHour4.SelectedIndex = 0;
+                cmbMin.SelectedIndex = 0;
+                cmbMin1.SelectedIndex = 0;
+                cmbMin2.SelectedIndex = 0;
+                cmbMin3.SelectedIndex = 0;
+                cmbMin4.SelectedIndex = 0;
+           
+
         }
     }
 }
+
+
+
+
+
+
+
 

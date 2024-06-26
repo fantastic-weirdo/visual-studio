@@ -44,6 +44,7 @@
             this.cmbHour3 = new System.Windows.Forms.ComboBox();
             this.cmbMin4 = new System.Windows.Forms.ComboBox();
             this.cmbHour4 = new System.Windows.Forms.ComboBox();
+            this.btnClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtClock
@@ -181,11 +182,24 @@
             this.cmbHour4.Size = new System.Drawing.Size(168, 37);
             this.cmbHour4.TabIndex = 19;
             // 
+            // btnClear
+            // 
+            this.btnClear.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnClear.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnClear.Location = new System.Drawing.Point(481, 344);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(230, 64);
+            this.btnClear.TabIndex = 21;
+            this.btnClear.Text = "清空鬧鐘";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.cmbMin4);
             this.Controls.Add(this.cmbHour4);
             this.Controls.Add(this.cmbMin3);
@@ -223,6 +237,7 @@
         private System.Windows.Forms.ComboBox cmbHour3;
         private System.Windows.Forms.ComboBox cmbMin4;
         private System.Windows.Forms.ComboBox cmbHour4;
+        private System.Windows.Forms.Button btnClear;
     }
 }
 
