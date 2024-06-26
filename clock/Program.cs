@@ -16,7 +16,7 @@ namespace clock
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new btnON());
+            Application.Run(new Form1());
         }
     }
 }
