@@ -87,6 +87,7 @@
             this.btnOn.TabIndex = 11;
             this.btnOn.Text = "啟動鬧鐘";
             this.btnOn.UseVisualStyleBackColor = true;
+            this.btnOn.Click += new System.EventHandler(this.btnOn_Click);
             // 
             // btnOff
             // 
@@ -98,6 +99,7 @@
             this.btnOff.TabIndex = 12;
             this.btnOff.Text = "關閉鬧鐘";
             this.btnOff.UseVisualStyleBackColor = true;
+            this.btnOff.Click += new System.EventHandler(this.btnOff_Click);
             // 
             // timerClcok
             // 
