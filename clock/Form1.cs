@@ -15,7 +15,8 @@ namespace clock
         public Form1()
         {
             InitializeComponent();
-            comboboxInitialzation();  // 下拉選單初始化
+            comboboxInitialzation();
+            timerClcok.Start();       // 啟動時鐘
         }
         List<string> hours = new List<string>();            // 小時清單
         List<string> minutes = new List<string>();          // 分鐘清單   
@@ -56,9 +57,10 @@ namespace clock
                 cmbMin4.Items.Add(string.Format("{0:00}", i));
             cmbMin4.SelectedIndex = 0;
         }
+
         private void timerClcok_Tick(object sender, EventArgs e)
         {
-
+            txtClock.Text = DateTime.Now.ToString("HH:mm:ss");    // 顯示時間
         }
 
         private void timerAlert_Tick(object sender, EventArgs e)
